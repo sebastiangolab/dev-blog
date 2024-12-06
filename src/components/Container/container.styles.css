@@ -1,13 +1,13 @@
-.position-wrapper {
+.container__position-wrapper {
   @apply flex justify-center w-full;
 }
 
-.content {
+.container__content {
   @apply container pl-20 pr-20;
 }
 
 @media (width >= theme(screens.huge)) {
-  .content {
+  .container__content {
     width: theme(screens.huge);
   }
 }

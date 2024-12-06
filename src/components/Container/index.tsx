@@ -8,8 +8,8 @@ type ContainerProps = {
 const Container = ({
   children,
 }: ContainerProps): ReactElement<ContainerProps> => (
-  <div className="position-wrapper">
-    <div className="content">{children}</div>
+  <div className="container__position-wrapper">
+    <div className="container__content">{children}</div>
   </div>
 );
 

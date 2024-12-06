@@ -1,15 +1,15 @@
-.wrapper {
+.header__wrapper {
   @apply pt-7 pb-7 mb-14 flex items-center justify-between border-b;
 }
 
-.logo {
+.header__logo {
   @apply text-3xl font-medium;
 }
 
-.menu-link {
+.header__menu-link {
   @apply text-lg transition duration-300;
 }
 
-.menu-link:hover {
+.header__menu-link:hover {
   @apply text-primary;
 }
