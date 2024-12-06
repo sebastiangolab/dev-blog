@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "backend.sebastiangolab.pl",
+        port: "",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
