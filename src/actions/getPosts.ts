@@ -5,6 +5,7 @@ export type PostData = {
   title: string;
   excerpt: string;
   content: string;
+  slug: string;
   date: string;
   author: string;
   category: string | null;
@@ -44,6 +45,7 @@ type PostsResponseData = {
           title: string;
           excerpt: string;
           content: string;
+          slug: string;
           date: string;
           author: AuthorResponseData;
           categories: CategoriesResponseData;
@@ -64,6 +66,7 @@ const getPosts = async (): Promise<PostData[]> => {
               title
               excerpt
               content
+              slug
               date
               author {
                 node {

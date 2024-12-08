@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { PostData } from "@/actions/getPosts";
 import calendarIcon from "@/icons/calendar.svg";
 import user from "@/icons/user.svg";
@@ -14,9 +15,10 @@ const PostTile = ({
   date,
   author,
   featuredImage,
+  slug,
 }: PostTileProps): ReactElement<PostTileProps> => {
   return (
-    <div className="post-tile__wrapper">
+    <Link className="post-tile__wrapper" href={`/${slug}`}>
       <div className="post-tile__content">
         {category ? <p className="post-tile__category">{category}</p> : null}
 
@@ -62,7 +64,7 @@ const PostTile = ({
           />
         </div>
       ) : null}
-    </div>
+    </Link>
   );
 };
 
