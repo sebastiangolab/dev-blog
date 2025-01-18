@@ -1,52 +1,20 @@
+"use server";
+
+import normalizeSinglePostResponseData from "@/helpers/normalizePostsResponseData";
 import AxiosWP from "@/lib/AxiosWP";
+import {
+  AuthorResponseData,
+  CategoriesResponseData,
+  FeaturedImageResponseData,
+  PostData,
+} from "@/types/postsActionsTypes";
+import axios from "axios";
 
-export type PostData = {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  slug: string;
-  date: string;
-  author: string;
-  category: string | null;
-  featuredImage: {
-    link: string;
-    altText: string;
-  } | null;
-};
-
-type AuthorResponseData = {
-  node: {
-    name: string;
-  };
-};
-
-type CategoriesResponseData = {
-  edges: {
-    node: {
-      name: string;
-    };
-  }[];
-};
-
-type FeaturedImageResponseData = {
-  node: {
-    altText: string;
-    link: string;
-  };
-};
-
-type PostsResponseData = {
+export type PostsResponseData = {
   data: {
     posts: {
       edges: {
-        node: {
-          id: string;
-          title: string;
-          excerpt: string;
-          content: string;
-          slug: string;
-          date: string;
+        node: PostData & {
           author: AuthorResponseData;
           categories: CategoriesResponseData;
           featuredImage: FeaturedImageResponseData;
@@ -56,10 +24,18 @@ type PostsResponseData = {
   };
 };
 
-const getPosts = async (): Promise<PostData[]> => {
+const getPosts = async (
+  count: number,
+  categoryParam?: string,
+  searchParam?: string,
+): Promise<PostData[]> => {
+  const countQuery = `first: ${count}`;
+  const searchParamQuery = `search: "${searchParam || ""}"`;
+  const categoryParamQuery = `categoryName: "${categoryParam || ""}"`;
+
   const query = `
       query GetAllPosts {
-        posts {
+        posts(${countQuery}, where: {${categoryParamQuery}, ${searchParamQuery}}) {
           edges {
             node {
               id
@@ -92,38 +68,27 @@ const getPosts = async (): Promise<PostData[]> => {
       }
     `;
 
-  const response = await AxiosWP.post<PostsResponseData>("/", {
-    query,
-  });
+  try {
+    const response = await AxiosWP.post<PostsResponseData>("/", {
+      query,
+    });
 
-  const postsDataEdges = response.data.data?.posts?.edges ?? [];
+    const postsDataEdges = response.data.data?.posts?.edges ?? [];
 
-  const postsData: PostData[] = postsDataEdges.map((postEdge) => {
-    const { author, categories, featuredImage, ...postData } = postEdge.node;
+    const postsData: PostData[] = postsDataEdges.map((postEdge) =>
+      normalizeSinglePostResponseData(postEdge.node),
+    );
 
-    const flatAuthorValue = author?.node?.name ?? "";
+    return postsData;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error(error.message);
+    } else {
+      console.error("Something wrong while get posts");
+    }
 
-    const flatCategoryValue = categories?.edges[0]?.node?.name ?? null;
-
-    const flatFeaturedImageLink = featuredImage?.node?.link;
-    const flatFeaturedImageAltText = featuredImage?.node?.altText;
-
-    const flatFeaturedImage = flatFeaturedImageLink
-      ? {
-          link: flatFeaturedImageLink,
-          altText: flatFeaturedImageAltText ?? "",
-        }
-      : null;
-
-    return {
-      ...postData,
-      author: flatAuthorValue,
-      category: flatCategoryValue,
-      featuredImage: flatFeaturedImage,
-    };
-  });
-
-  return postsData;
+    return [];
+  }
 };
 
 export default getPosts;
