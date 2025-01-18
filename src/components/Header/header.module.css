@@ -1,0 +1,71 @@
+.wrapper {
+  @apply mb-14 flex items-center justify-between border-b;
+  padding: 27.5px 0;
+}
+
+.logo {
+  @apply text-3xl font-medium;
+  line-height: 1em;
+}
+
+.menuLink {
+  @apply text-lg transition duration-300;
+}
+
+.menuLink:hover {
+  @apply text-primary;
+}
+
+@media (max-width: theme(screens.huge)) {
+  .wrapper {
+    padding: 25px 0;
+  }
+
+  .logo {
+    font-size: 1.688rem;
+  }
+
+  .menuLink {
+    @apply text-base;
+  }
+}
+
+@media (max-width: theme(screens.large)) {
+  .wrapper {
+    padding: 24px 0;
+  }
+
+  .logo {
+    font-size: 1.563rem;
+  }
+
+  .menuLink {
+    font-size: 0.938rem;
+  }
+}
+
+@media (max-width: theme(screens.medium)) {
+  .wrapper {
+    margin-bottom: 50px;
+  }
+
+  .logo {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: theme(screens.xSmall)) {
+  .wrapper {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    margin-bottom: 35px;
+  }
+
+  .logo {
+    font-size: 1.063rem;
+  }
+
+  .menuLink {
+    font-size: 0.813rem;
+  }
+}
