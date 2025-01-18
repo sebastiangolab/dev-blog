@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import getPosts from "@/actions/getPosts";
 import getCategorieas from "@/actions/getCategories";
 import { LoadingPostsStateProvider } from "@/providers/LoadingPostsStateProvider";
+import { POSTS_NUMBER } from "@/variables";
 import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
 import CategoriesFilters from "@/components/CategoriesFilters";
 import PostsList from "@/components/PostsList";
@@ -30,7 +31,7 @@ const HomePage = async ({
   const allParams = await searchParams;
   const categoryParam = allParams?.category;
 
-  const initPosts = await getPosts(3, categoryParam);
+  const initPosts = await getPosts(POSTS_NUMBER, categoryParam);
   const categories = await getCategorieas();
 
   return (

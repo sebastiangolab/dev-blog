@@ -1,13 +1,14 @@
 "use client";
 
 import { ReactElement, useContext, useEffect, useState } from "react";
-import PostTile from "../PostTile";
-import { PostData } from "@/types/postsActionsTypes";
-import getPosts from "@/actions/getPosts";
-import PostTilePlaceholder from "../PostTilePlaceholder";
-import { LoadingPostsStateContext } from "@/providers/LoadingPostsStateProvider";
 import { useInView } from "react-intersection-observer";
 import BarLoader from "react-spinners/BarLoader";
+import getPosts from "@/actions/getPosts";
+import { LoadingPostsStateContext } from "@/providers/LoadingPostsStateProvider";
+import { PostData } from "@/types/postsActionsTypes";
+import { POSTS_NUMBER } from "@/variables";
+import PostTile from "../PostTile";
+import PostTilePlaceholder from "../PostTilePlaceholder";
 import styles from "./postsList.module.css";
 
 type PostsListProps = {
@@ -19,48 +20,60 @@ const PostsList = ({
   initPosts,
   categoryParam,
 }: PostsListProps): ReactElement<PostsListProps> => {
+  const [firstRender, setIsFirstRender] = useState<boolean>(true);
   const [posts, setPosts] = useState<PostData[]>(initPosts);
-  const [postsNumberVisible, setPostsNumberVisible] = useState<number>(3);
+  const [postsNumberVisible, setPostsNumberVisible] =
+    useState<number>(POSTS_NUMBER);
 
-  const { ref: postsEndRef, inView: postsEndView } = useInView();
+  const { ref: postsEndRef, inView: isPostsEndView } = useInView();
+  const [isMorePostsLoading, setIsMorePostsLoading] = useState<boolean>(false);
 
-  const [isLoadPosts, setIsLoadPosts] = useState<boolean>(false);
   const { isPostsLoading, setIsPostsLoading } = useContext(
     LoadingPostsStateContext,
   );
 
-  const loadMorePosts = async () => {
+  console.log(POSTS_NUMBER);
+
+  const loadPosts = async () => {
     const newPosts = await getPosts(postsNumberVisible, categoryParam);
     setPosts(newPosts);
 
     setIsPostsLoading(false);
-    setIsLoadPosts(false);
+    setIsMorePostsLoading(false);
   };
 
   useEffect(() => {
-    setPostsNumberVisible(3);
+    if (!firstRender) {
+      setPostsNumberVisible(POSTS_NUMBER);
 
-    loadMorePosts();
+      loadPosts();
+    }
   }, [categoryParam]);
-
-  useEffect(() => {
-    loadMorePosts();
-  }, [postsNumberVisible]);
 
   useEffect(() => {
     if (posts.length < postsNumberVisible) {
       return;
     }
 
-    if (!postsEndView) {
-      setIsLoadPosts(false);
+    if (!isPostsEndView) {
+      setIsMorePostsLoading(false);
 
       return;
     }
 
-    setIsLoadPosts(true);
-    setPostsNumberVisible((prevValue) => prevValue + 3);
-  }, [postsEndView]);
+    setIsMorePostsLoading(true);
+    setPostsNumberVisible((prevValue) => prevValue + POSTS_NUMBER);
+  }, [isPostsEndView]);
+
+  useEffect(() => {
+    if (!firstRender) {
+      loadPosts();
+    }
+  }, [postsNumberVisible]);
+
+  useEffect(() => {
+    setIsFirstRender(false);
+  }, []);
 
   if (isPostsLoading) {
     return (
@@ -80,7 +93,7 @@ const PostsList = ({
         return <PostTile key={id} {...postData} />;
       })}
 
-      {isLoadPosts ? <BarLoader /> : null}
+      {isMorePostsLoading ? <BarLoader /> : null}
 
       <div ref={postsEndRef} className={styles.postsEndElement}></div>
     </div>
