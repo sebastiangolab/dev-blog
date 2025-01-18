@@ -1,0 +1,49 @@
+.wrapper {
+  @apply flex mb-9 border-b w-full;
+  overflow: auto;
+}
+
+.category {
+  @apply mr-9 p-2 cursor-pointer transition-all text-nowrap;
+  @apply w-auto !important;
+}
+
+.category:hover,
+.active {
+  @apply border-b border-black;
+}
+
+.category.disable:hover:not(.active),
+.disable:not(.active) {
+  @apply cursor-not-allowed text-greyText border-greyText;
+}
+
+@media (max-width: theme(screens.huge)) {
+  .category {
+    @apply mr-8;
+  }
+}
+
+@media (max-width: theme(screens.large)) {
+  .category {
+    @apply mr-7;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .category {
+    @apply mr-6;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .category {
+    @apply mr-6 text-sm p-3;
+  }
+}
+
+@media (max-width: theme(screens.xSmall)) {
+  .wrapper {
+    @apply mb-8;
+  }
+}

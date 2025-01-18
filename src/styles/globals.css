@@ -22,3 +22,7 @@ body {
 .grey-color {
   color: theme(colors.greyText);
 }
+
+.black-color {
+  color: theme(colors.black);
+}
