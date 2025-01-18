@@ -1,0 +1,53 @@
+.positionWrapper {
+  @apply flex justify-center w-full;
+}
+
+.content {
+  @apply container;
+  width: 100%;
+  max-width: 1480px;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: theme(screens.huge)) {
+  .content {
+    max-width: 1200px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 95px;
+  }
+}
+
+@media (max-width: theme(screens.large)) {
+  .content {
+    max-width: 992px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: theme(screens.medium)) {
+  .content {
+    max-width: 768px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .positionWrapper {
+    min-width: 375px;
+  }
+
+  .content {
+    max-width: 100%;
+    min-width: 375px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 50px;
+  }
+}

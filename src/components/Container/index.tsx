@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from "react";
-import "./container.styles.css";
+import styles from "./container.module.css";
 
 type ContainerProps = {
   children: ReactNode;
@@ -8,8 +8,8 @@ type ContainerProps = {
 const Container = ({
   children,
 }: ContainerProps): ReactElement<ContainerProps> => (
-  <div className="container__position-wrapper">
-    <div className="container__content">{children}</div>
+  <div className={styles.positionWrapper}>
+    <div className={styles.content}>{children}</div>
   </div>
 );
 
