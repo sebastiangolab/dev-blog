@@ -1,0 +1,47 @@
+.title {
+  @apply text-4xl font-semibold pb-6;
+  line-height: 3rem;
+}
+
+.details {
+  @apply flex pb-6;
+}
+
+.imageWrapper {
+  @apply w-full h-auto overflow-hidden mb-9;
+  max-height: 500px;
+}
+
+.featuredImage {
+  @apply bg-cover;
+}
+
+@media (max-width: theme(screens.large)) {
+  .title {
+    @apply text-3xl pb-5;
+  }
+
+  .details {
+    @apply pb-5;
+  }
+}
+
+@media (max-width: theme(screens.medium)) {
+  .title {
+    @apply text-3xl pb-4;
+  }
+
+  .details {
+    @apply pb-4;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .title {
+    @apply text-2xl pb-4;
+  }
+
+  .details {
+    @apply pb-4;
+  }
+}

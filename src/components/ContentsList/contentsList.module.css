@@ -1,0 +1,39 @@
+.wrapper {
+  @apply border-l py-4  sticky top-6;
+}
+
+.link {
+  @apply block mb-2 cursor-pointer py-2 pl-8;
+  margin-left: 3px;
+}
+
+.link:hover,
+.link.active {
+  @apply border-l border-black font-medium;
+  margin-left: 0;
+}
+
+.link:last-child {
+  @apply mb-0;
+}
+
+@media (max-width: theme(screens.huge)) {
+  .wrapper {
+    @apply py-3;
+  }
+
+  .link {
+    @apply py-2 pl-6;
+  }
+}
+
+@media (max-width: theme(screens.large)) {
+  .wrapper {
+    @apply py-2;
+  }
+
+  .link {
+    @apply pl-5;
+    font-size: 15px;
+  }
+}
