@@ -1,0 +1,47 @@
+.wrapper {
+  @apply text-sm flex items-center;
+}
+
+.wrapper.big {
+  @apply text-base;
+}
+
+.wrapper:not(:first-child) {
+  @apply ml-9;
+}
+
+.wrapper > img {
+  @apply mr-2;
+  padding-bottom: 2px;
+}
+
+.wrapper.big > img {
+  padding-bottom: 3px;
+}
+
+@media (max-width: theme(screens.small)) {
+  .wrapper {
+    font-size: 13px;
+  }
+
+  .wrapper:not(:first-child) {
+    @apply ml-8;
+  }
+}
+
+@media (max-width: theme(screens.xSmall)) {
+  .wrapper {
+    font-size: 12px;
+  }
+
+  .wrapper:not(:first-child) {
+    @apply ml-4;
+  }
+
+  .wrapper > img {
+    @apply mr-1;
+    width: 17px;
+    height: auto;
+    padding-bottom: 3px;
+  }
+}

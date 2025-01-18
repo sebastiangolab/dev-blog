@@ -1,10 +1,14 @@
 import { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { PostData } from "@/actions/getPosts";
-import calendarIcon from "@/icons/calendar.svg";
-import user from "@/icons/user.svg";
-import "./postTile.styles.css";
+import calendarIcon from "@/icons/calendar-grey.svg";
+import userIcon from "@/icons/user-grey.svg";
+import normalizePostDate from "@/helpers/normalizePostDate";
+import { PostData } from "@/types/postsActionsTypes";
+import Markdown from "markdown-to-jsx";
+import PostDetailWithIcon from "../PostDetailWithIcon";
+import CategoryElement from "../CategoryElement";
+import styles from "./postTile.module.css";
 
 type PostTileProps = Omit<PostData, "id" | "content">;
 
@@ -18,49 +22,39 @@ const PostTile = ({
   slug,
 }: PostTileProps): ReactElement<PostTileProps> => {
   return (
-    <Link className="post-tile__wrapper" href={`/${slug}`}>
-      <div className="post-tile__content">
-        {category ? <p className="post-tile__category">{category}</p> : null}
+    <Link className={styles.wrapper} href={`/${slug}`}>
+      <div className={styles.content}>
+        {category ? (
+          <div className={styles.category}>
+            <CategoryElement categoryName={category} />
+          </div>
+        ) : null}
 
-        <h1 className="post-tile__title">{title}</h1>
+        <h1 className={styles.title}>{title}</h1>
 
-        <p className="post-tile__excerpt">{excerpt}</p>
+        <Markdown className={styles.excerpt} options={{ forceBlock: true }}>
+          {excerpt}
+        </Markdown>
 
-        <div className="post-tile__details">
-          <p className="post-tile__details-item grey-color">
-            <Image
-              priority
-              src={calendarIcon}
-              alt="date icon"
-              width={19}
-              height={19}
-              className="post-tile__details-item-icon"
-            />
-            {date}
-          </p>
+        <div className={styles.details}>
+          <PostDetailWithIcon icon={calendarIcon} iconAlt="calendar icon">
+            {normalizePostDate(date)}
+          </PostDetailWithIcon>
 
-          <p className="post-tile__details-item grey-color">
-            <Image
-              priority
-              src={user}
-              alt="author icon"
-              width={19}
-              height={19}
-              className="post-tile__details-item-icon"
-            />
+          <PostDetailWithIcon icon={userIcon} iconAlt="user icon">
             {author}
-          </p>
+          </PostDetailWithIcon>
         </div>
       </div>
 
       {featuredImage ? (
-        <div className="post-tile__image-wrapper">
+        <div className={styles.imageWrapper}>
           <Image
             src={featuredImage.link}
             alt={featuredImage.altText}
-            width={250}
-            height={166}
-            className="post-tile__featured-image"
+            width={100}
+            height={50}
+            className={styles.featuredImage}
           />
         </div>
       ) : null}

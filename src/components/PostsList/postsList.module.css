@@ -1,0 +1,7 @@
+.postsEndElement {
+  @apply h-1 block;
+}
+
+.searchPhraseTitle {
+  @apply text-xl mb-9;
+}
