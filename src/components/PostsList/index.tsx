@@ -32,8 +32,6 @@ const PostsList = ({
     LoadingPostsStateContext,
   );
 
-  console.log(POSTS_NUMBER);
-
   const loadPosts = async () => {
     const newPosts = await getPosts(postsNumberVisible, categoryParam);
     setPosts(newPosts);
