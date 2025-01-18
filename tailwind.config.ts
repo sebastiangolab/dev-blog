@@ -5,10 +5,11 @@ export default {
   theme: {
     extend: {
       screens: {
-        small: "480px",
-        medium: "768px",
-        large: "976px",
-        huge: "1440px",
+        xSmall: "576",
+        small: "767px",
+        medium: "991px",
+        large: "1199px",
+        huge: "1469px",
       },
       colors: {
         white: "#fff",
