@@ -1,0 +1,29 @@
+.wrapper {
+  @apply flex justify-between;
+}
+
+.firstColumn {
+  @apply flex-1 max-w-full overflow-hidden;
+}
+
+.secondColumn {
+  @apply w-64 ml-36;
+}
+
+@media (max-width: theme(screens.huge)) {
+  .secondColumn {
+    @apply w-56 ml-20;
+  }
+}
+
+@media (max-width: theme(screens.large)) {
+  .secondColumn {
+    @apply w-52 ml-16;
+  }
+}
+
+@media (max-width: theme(screens.medium)) {
+  .secondColumn {
+    display: none;
+  }
+}

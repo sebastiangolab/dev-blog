@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from "react";
-import "./twoColumnsLayout.styles.css";
+import styles from "./twoColumnsLayout.module.css";
 
 type TwoColumnsLayoutProps = {
   children: ReactNode;
@@ -10,10 +10,10 @@ const TwoColumnsLayout = ({
   children: firstColumnContent,
   secondColumnContent,
 }: TwoColumnsLayoutProps): ReactElement<TwoColumnsLayoutProps> => (
-  <div className="twoColumnsLayout__wrapper">
-    <div className="twoColumnsLayout__first-column">{firstColumnContent}</div>
+  <div className={styles.wrapper}>
+    <div className={styles.firstColumn}>{firstColumnContent}</div>
 
-    <div className="twoColumnsLayout__second-column">{secondColumnContent}</div>
+    <div className={styles.secondColumn}>{secondColumnContent}</div>
   </div>
 );
 
