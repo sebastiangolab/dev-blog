@@ -9,6 +9,7 @@ import CategoryElement from "../CategoryElement";
 import postyDetailWithIconStyles from "../PostDetailWithIcon/postDetailWithIcon.module.css";
 import styles from "./singlePost.module.css";
 import FeaturedImage from "../FeaturedImage";
+import SinglePostPlaceholder from "../SinglePostPlaceholder";
 
 const SinglePost = ({
   title,

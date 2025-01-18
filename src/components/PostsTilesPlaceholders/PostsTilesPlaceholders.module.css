@@ -32,6 +32,10 @@
   height: 8px;
 }
 
+.text > div:last-child {
+  display: none;
+}
+
 .details {
   @apply flex;
 }
@@ -45,4 +49,72 @@
 .image {
   width: 250px;
   height: 166px;
+}
+
+@media (max-width: theme(screens.large)) {
+  .content {
+    @apply pr-16;
+  }
+
+  .image {
+    width: 210px;
+    height: 145px;
+  }
+
+  .text > div:last-child {
+    display: block;
+  }
+
+  .details > div {
+    width: 35%;
+  }
+}
+
+@media (max-width: theme(screens.small)) {
+  .content {
+    @apply pr-12;
+  }
+
+  .image {
+    width: 180px;
+    height: 120px;
+  }
+
+  .details > div {
+    width: 25%;
+  }
+}
+
+@media (max-width: theme(screens.xSmall)) {
+  .wrapper {
+    @apply pb-7 mb-7;
+  }
+
+  .content {
+    @apply pr-5;
+  }
+
+  .category {
+    @apply mb-3;
+    height: 14px;
+  }
+
+  .title {
+    @apply mb-3;
+    height: 21px;
+  }
+
+  .image {
+    width: 80px;
+    height: 55px;
+  }
+
+  .text {
+    @apply mb-6;
+  }
+
+  .details > div {
+    @apply mr-5;
+    width: 40%;
+  }
 }

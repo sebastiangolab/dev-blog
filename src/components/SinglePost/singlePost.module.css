@@ -30,14 +30,20 @@
   .details {
     @apply pb-4;
   }
+
+  .featuredImage {
+    max-height: 450px;
+  }
 }
 
 @media (max-width: theme(screens.small)) {
   .title {
-    @apply text-2xl pb-4;
+    @apply text-2xl;
   }
+}
 
-  .details {
-    @apply pb-4;
+@media (max-width: theme(screens.xSmall)) {
+  .featuredImage {
+    max-height: 350px;
   }
 }

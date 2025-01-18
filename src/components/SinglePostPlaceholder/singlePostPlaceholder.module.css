@@ -3,13 +3,13 @@
 }
 
 .title {
-  @apply mb-7;
+  @apply mb-6;
   width: 90%;
   height: 35px;
 }
 
 .details {
-  @apply flex mb-7;
+  @apply flex mb-6;
 }
 
 .details > div {
@@ -19,7 +19,7 @@
 }
 
 .image {
-  @apply mb-7;
+  @apply mb-6;
   width: 100%;
   height: 400px;
 }
@@ -28,4 +28,40 @@
   @apply block mb-2;
   width: 100%;
   height: 8px;
+}
+
+@media (max-width: theme(screens.large)) {
+  .title {
+    @apply mb-5;
+  }
+
+  .details {
+    @apply mb-5;
+  }
+}
+
+@media (max-width: theme(screens.medium)) {
+  .title {
+    @apply mb-4;
+    height: 32px;
+  }
+
+  .details {
+    @apply mb-4;
+  }
+
+  .image {
+    @apply mb-5;
+    height: 350px;
+  }
+}
+
+@media (max-width: theme(screens.xSmall)) {
+  .title {
+    height: 30px;
+  }
+
+  .image {
+    height: 300px;
+  }
 }

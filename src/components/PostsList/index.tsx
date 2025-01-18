@@ -84,9 +84,7 @@ const PostsList = ({
 
         return <PostTile key={id} {...postData} />;
       })}
-
       {isMorePostsLoading ? <BarLoader /> : null}
-
       <div ref={postsEndRef} className={styles.postsEndElement}></div>
     </div>
   );
