@@ -1,14 +1,14 @@
 "use server";
 
-import normalizeSinglePostResponseData from "@/helpers/normalizeSinglePostResponseData";
+import axios from "axios";
 import AxiosWP from "@/lib/AxiosWP";
+import normalizeSinglePostResponseData from "@/helpers/normalizeSinglePostResponseData";
 import {
   AuthorResponseData,
   CategoriesResponseData,
   FeaturedImageResponseData,
   PostData,
 } from "@/types/postsActionsTypes";
-import axios from "axios";
 
 export type SinglePostResponseData = {
   data: {
