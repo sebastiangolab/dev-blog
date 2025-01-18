@@ -8,7 +8,7 @@ import { LoadingPostsStateContext } from "@/providers/LoadingPostsStateProvider"
 import { PostData } from "@/types/postsActionsTypes";
 import { POSTS_NUMBER } from "@/variables";
 import PostTile from "../PostTile";
-import PostTilePlaceholder from "../PostTilePlaceholder";
+import PostsTilesPlaceholders from "../PostsTilesPlaceholders";
 import styles from "./postsList.module.css";
 
 type PostsListProps = {
@@ -74,13 +74,7 @@ const PostsList = ({
   }, []);
 
   if (isPostsLoading) {
-    return (
-      <>
-        <PostTilePlaceholder />
-        <PostTilePlaceholder />
-        <PostTilePlaceholder />
-      </>
-    );
+    return <PostsTilesPlaceholders />;
   }
 
   return (

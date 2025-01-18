@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
-import styles from "./postTilePlaceholder.module.css";
+import styles from "./PostsTilesPlaceholders.module.css";
 
-const PostTilePlaceholder = (): ReactElement => {
-  return (
+const PostsTilesPlaceholders = (): ReactElement => {
+  const placeholderElement = (
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <div className={`${styles.category} ${styles.element}`}></div>
@@ -24,6 +24,14 @@ const PostTilePlaceholder = (): ReactElement => {
       <div className={`${styles.image} ${styles.element}`}></div>
     </div>
   );
+
+  return (
+    <>
+      {placeholderElement}
+      {placeholderElement}
+      {placeholderElement}
+    </>
+  );
 };
 
-export default PostTilePlaceholder;
+export default PostsTilesPlaceholders;
