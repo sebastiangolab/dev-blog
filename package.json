@@ -21,7 +21,6 @@
     "react-intersection-observer": "^9.14.1",
     "react-scroll": "^1.9.0",
     "react-spinners": "^0.15.0",
-    "react-syntax-highlighter": "^15.6.1",
     "slick-carousel": "^1.8.1",
     "use-debounce": "^10.0.4"
   },
@@ -33,7 +32,6 @@
     "@types/react-dom": "^18",
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.13",
-    "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "8",
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "9.1.0",
