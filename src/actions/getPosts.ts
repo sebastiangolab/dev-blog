@@ -60,6 +60,10 @@ const getPosts = async (
                 node {
                   altText
                   link
+                  mediaDetails {
+                    height
+                    width
+                  }
                 }
               }
             }

@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { PostData } from "@/types/postsActionsTypes";
 import styles from "./searchedPostsList.module.css";
+import FeaturedImage from "../FeaturedImage";
 
 type SearchedPostsProps = {
   posts: PostData[];
@@ -33,15 +33,13 @@ const SearchedPostsList = ({
           <div className={styles.title}>{title}</div>
 
           {featuredImage ? (
-            <div className={styles.imageWrapper}>
-              <Image
-                src={featuredImage.link}
-                alt={featuredImage.altText}
-                width={250}
-                height={166}
-                className={styles.image}
-              />
-            </div>
+            <FeaturedImage
+              link={featuredImage.link}
+              alt={featuredImage.altText}
+              width={90}
+              height={60}
+              className={styles.featuredImage}
+            />
           ) : null}
         </Link>
       ))}

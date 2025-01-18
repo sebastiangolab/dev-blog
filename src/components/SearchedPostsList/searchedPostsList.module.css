@@ -22,16 +22,10 @@
   @apply flex-1 text-base;
 }
 
-.imageWrapper {
-  @apply overflow-hidden rounded-md ml-7;
+.featuredImage {
+  @apply ml-7;
   width: 90px;
   height: 60px;
-}
-
-.image {
-  @apply object-cover;
-  width: 100%;
-  height: 100%;
 }
 
 @media (max-width: theme(screens.medium)) {
@@ -43,7 +37,7 @@
     @apply pl-5 pr-5;
   }
 
-  .imageWrapper {
+  .featuredImage {
     @apply ml-2;
     width: 80px;
     height: 55px;

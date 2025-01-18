@@ -10,6 +10,8 @@ export type PostData = {
   featuredImage: {
     link: string;
     altText: string;
+    height: number;
+    width: number;
   } | null;
 };
 
@@ -32,5 +34,9 @@ export type FeaturedImageResponseData = {
   node: {
     altText: string;
     link: string;
+    mediaDetails: {
+      height: number;
+      width: number;
+    };
   };
 };

@@ -20,11 +20,15 @@ const normalizeSinglePostResponseData = (
 
   const flatFeaturedImageLink = featuredImage?.node?.link;
   const flatFeaturedImageAltText = featuredImage?.node?.altText;
+  const flatFeaturedImageWidth = featuredImage?.node?.mediaDetails.width;
+  const flatFeaturedImageHeight = featuredImage?.node?.mediaDetails.height;
 
   const flatFeaturedImage = flatFeaturedImageLink
     ? {
         link: flatFeaturedImageLink,
         altText: flatFeaturedImageAltText ?? "",
+        width: flatFeaturedImageWidth ?? 0,
+        height: flatFeaturedImageHeight ?? 0,
       }
     : null;
 

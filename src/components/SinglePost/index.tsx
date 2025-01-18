@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import Image from "next/image";
 import normalizePostDate from "@/helpers/normalizePostDate";
 import calendarIcon from "@/icons/calendar-black.svg";
 import user from "@/icons/user-black.svg";
@@ -9,6 +8,7 @@ import PostDetailWithIcon from "../PostDetailWithIcon";
 import CategoryElement from "../CategoryElement";
 import postyDetailWithIconStyles from "../PostDetailWithIcon/postDetailWithIcon.module.css";
 import styles from "./singlePost.module.css";
+import FeaturedImage from "../FeaturedImage";
 
 const SinglePost = ({
   title,
@@ -41,15 +41,13 @@ const SinglePost = ({
       </div>
 
       {featuredImage ? (
-        <div className={styles.imageWrapper}>
-          <Image
-            src={featuredImage.link}
-            alt={featuredImage.altText}
-            width={864}
-            height={500}
-            className={styles.featuredImage}
-          />
-        </div>
+        <FeaturedImage
+          link={featuredImage.link}
+          alt={featuredImage.altText}
+          width={featuredImage.width}
+          height={featuredImage.height}
+          className={styles.featuredImage}
+        />
       ) : null}
 
       <StyledMarkdown>{content}</StyledMarkdown>

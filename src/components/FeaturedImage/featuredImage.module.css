@@ -1,0 +1,9 @@
+.imageWrapper {
+  @apply overflow-hidden rounded-md;
+}
+
+.image {
+  @apply object-cover;
+  width: 100%;
+  height: 100%;
+}

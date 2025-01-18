@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
 import calendarIcon from "@/icons/calendar-grey.svg";
@@ -9,6 +8,7 @@ import { PostData } from "@/types/postsActionsTypes";
 import PostDetailWithIcon from "../PostDetailWithIcon";
 import CategoryElement from "../CategoryElement";
 import styles from "./postTile.module.css";
+import FeaturedImage from "../FeaturedImage";
 
 type PostTileProps = Omit<PostData, "id" | "content">;
 
@@ -48,15 +48,13 @@ const PostTile = ({
       </div>
 
       {featuredImage ? (
-        <div className={styles.imageWrapper}>
-          <Image
-            src={featuredImage.link}
-            alt={featuredImage.altText}
-            width={100}
-            height={50}
-            className={styles.featuredImage}
-          />
-        </div>
+        <FeaturedImage
+          link={featuredImage.link}
+          alt={featuredImage.altText}
+          width={250}
+          height={166}
+          className={styles.featuredImage}
+        />
       ) : null}
     </Link>
   );

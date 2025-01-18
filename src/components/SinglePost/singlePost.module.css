@@ -7,13 +7,9 @@
   @apply flex pb-6;
 }
 
-.imageWrapper {
-  @apply w-full h-auto overflow-hidden mb-9;
-  max-height: 500px;
-}
-
 .featuredImage {
-  @apply bg-cover;
+  @apply w-full h-auto mb-9;
+  max-height: 500px;
 }
 
 @media (max-width: theme(screens.large)) {

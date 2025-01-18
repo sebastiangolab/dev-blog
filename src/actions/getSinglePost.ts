@@ -45,6 +45,10 @@ const getSinglePost = async (slug: string): Promise<PostData | null> => {
           node {
             altText
             link
+            mediaDetails {
+              height
+              width
+            }
           }
         }
       }
