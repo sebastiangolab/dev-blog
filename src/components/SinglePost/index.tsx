@@ -3,12 +3,12 @@ import Image from "next/image";
 import normalizePostDate from "@/helpers/normalizePostDate";
 import calendarIcon from "@/icons/calendar-black.svg";
 import user from "@/icons/user-black.svg";
+import { PostData } from "@/types/postsActionsTypes";
 import StyledMarkdown from "../StyledMarkdown";
 import PostDetailWithIcon from "../PostDetailWithIcon";
 import CategoryElement from "../CategoryElement";
-import { PostData } from "@/types/postsActionsTypes";
-import styles from "./singlePost.module.css";
 import postyDetailWithIconStyles from "../PostDetailWithIcon/postDetailWithIcon.module.css";
+import styles from "./singlePost.module.css";
 
 const SinglePost = ({
   title,

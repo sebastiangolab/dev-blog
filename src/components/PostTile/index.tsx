@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Markdown from "markdown-to-jsx";
 import calendarIcon from "@/icons/calendar-grey.svg";
 import userIcon from "@/icons/user-grey.svg";
 import normalizePostDate from "@/helpers/normalizePostDate";
 import { PostData } from "@/types/postsActionsTypes";
-import Markdown from "markdown-to-jsx";
 import PostDetailWithIcon from "../PostDetailWithIcon";
 import CategoryElement from "../CategoryElement";
 import styles from "./postTile.module.css";

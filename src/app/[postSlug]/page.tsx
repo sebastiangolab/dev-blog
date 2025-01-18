@@ -1,9 +1,9 @@
+import { Metadata } from "next";
+import getH2Texts from "@/helpers/getH2Texts";
 import getSinglePost from "@/actions/getSinglePost";
+import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
 import ContentsList from "@/components/ContentsList";
 import SinglePost from "@/components/SinglePost";
-import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
-import getH2Texts from "@/helpers/getH2Texts";
-import { Metadata } from "next";
 
 type Params = {
   postSlug: string;
