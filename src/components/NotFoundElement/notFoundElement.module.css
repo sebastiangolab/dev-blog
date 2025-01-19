@@ -1,0 +1,11 @@
+.title {
+  @apply text-2xl mb-2;
+}
+
+.text {
+  @apply text-lg;
+}
+
+.link {
+  @apply text-sky-600 underline underline-offset-4 transition-colors;
+}

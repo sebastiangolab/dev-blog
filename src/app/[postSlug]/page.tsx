@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import getH2Texts from "@/helpers/getH2Texts";
 import getSinglePost from "@/actions/getSinglePost";
 import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
@@ -70,7 +71,7 @@ const PostPage = async ({ params }: PostPageProps) => {
   const postData = await getSinglePost(postSlug);
 
   if (!postData) {
-    return null;
+    return notFound();
   }
 
   const contentH2Titles = getH2Texts(postData.content);
