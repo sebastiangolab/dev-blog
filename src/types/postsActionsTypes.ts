@@ -5,6 +5,7 @@ export type PostData = {
   content: string;
   slug: string;
   date: string;
+  modified: string;
   author: string;
   category: string | null;
   featuredImage: {

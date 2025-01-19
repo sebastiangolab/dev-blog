@@ -44,6 +44,7 @@ const getPosts = async (
               content
               slug
               date
+              modified
               author {
                 node {
                   name

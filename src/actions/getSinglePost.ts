@@ -29,6 +29,7 @@ const getSinglePost = async (slug: string): Promise<PostData | null> => {
         excerpt
         content
         date
+        modified
         author {
           node {
             name
