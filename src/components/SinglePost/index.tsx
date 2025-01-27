@@ -3,13 +3,13 @@ import normalizePostDate from "@/helpers/normalizePostDate";
 import calendarIcon from "@/icons/calendar-black.svg";
 import user from "@/icons/user-black.svg";
 import { PostData } from "@/types/postsActionsTypes";
-import StyledMarkdown from "../StyledMarkdown";
-import PostDetailWithIcon from "../PostDetailWithIcon";
 import CategoryElement from "../CategoryElement";
+import FeaturedImage from "../FeaturedImage";
+import PostDetailWithIcon from "../PostDetailWithIcon";
+import SinglePostPlaceholder from "../SinglePostPlaceholder";
+import StyledMarkdown from "../StyledMarkdown";
 import postyDetailWithIconStyles from "../PostDetailWithIcon/postDetailWithIcon.module.css";
 import styles from "./singlePost.module.css";
-import FeaturedImage from "../FeaturedImage";
-import SinglePostPlaceholder from "../SinglePostPlaceholder";
 
 const SinglePost = ({
   title,

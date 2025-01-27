@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
 import { Metadata } from "next";
-import getPosts from "@/actions/getPosts";
 import getCategorieas from "@/actions/getCategories";
-import { LoadingPostsStateProvider } from "@/providers/LoadingPostsStateProvider";
-import { POSTS_NUMBER } from "@/variables";
-import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
+import getPosts from "@/actions/getPosts";
 import CategoriesFilters from "@/components/CategoriesFilters";
 import PostsList from "@/components/PostsList";
+import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
+import { LoadingPostsStateProvider } from "@/providers/LoadingPostsStateProvider";
+import { POSTS_NUMBER } from "@/variables";
 
 type HomePageProps = {
   searchParams?: Promise<{

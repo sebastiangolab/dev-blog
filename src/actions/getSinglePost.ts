@@ -1,8 +1,8 @@
 "use server";
 
 import axios from "axios";
-import AxiosWP from "@/lib/AxiosWP";
 import normalizeSinglePostResponseData from "@/helpers/normalizeSinglePostResponseData";
+import AxiosWP from "@/lib/AxiosWP";
 import {
   AuthorResponseData,
   CategoriesResponseData,

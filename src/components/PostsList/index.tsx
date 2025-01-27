@@ -7,8 +7,8 @@ import getPosts from "@/actions/getPosts";
 import { LoadingPostsStateContext } from "@/providers/LoadingPostsStateProvider";
 import { PostData } from "@/types/postsActionsTypes";
 import { POSTS_NUMBER } from "@/variables";
-import PostTile from "../PostTile";
 import PostsTilesPlaceholders from "../PostsTilesPlaceholders";
+import PostTile from "../PostTile";
 import styles from "./postsList.module.css";
 
 type PostsListProps = {

@@ -1,8 +1,8 @@
 "use server";
 
 import axios from "axios";
-import AxiosWP from "@/lib/AxiosWP";
 import normalizeCategoriesResponseData from "@/helpers/normalizeCategoriesResponseData";
+import AxiosWP from "@/lib/AxiosWP";
 import { CategoriesResponseData } from "@/types/postsActionsTypes";
 
 export type CategoriesResponseDataQuery = {

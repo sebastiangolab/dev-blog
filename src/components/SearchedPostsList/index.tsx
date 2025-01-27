@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
 import { PostData } from "@/types/postsActionsTypes";
-import styles from "./searchedPostsList.module.css";
 import FeaturedImage from "../FeaturedImage";
+import styles from "./searchedPostsList.module.css";
 
 type SearchedPostsProps = {
   posts: PostData[];

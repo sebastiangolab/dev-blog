@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import Image from "next/image";
 import javaScriptIcon from "@/icons/javascript-icon.svg";
-import reactIcon from "@/icons/react-icon.svg";
 import nextJsIcon from "@/icons/nextjs-icon.svg";
+import reactIcon from "@/icons/react-icon.svg";
 import webDevIcon from "@/icons/web-dev-icon.svg";
 
 type CategoryElementProps = {

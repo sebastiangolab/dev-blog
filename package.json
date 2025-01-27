@@ -1,20 +1,25 @@
 {
-  "name": "nextjs-dev-blog",
-  "version": "0.1.0",
+  "name": "dev-blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint-fix": "next lint --fix",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
-    "prepare": "husky"
+    "husky": "husky"
   },
+  "pre-commit": [
+    "husky"
+  ],
   "dependencies": {
     "axios": "^1.7.8",
+    "html-entities": "^2.5.2",
     "markdown-to-jsx": "^7.7.1",
-    "next": "15.0.3",
+    "next": "^15.1.6",
     "prismjs": "^1.29.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -38,10 +43,12 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "7.34.2",
     "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "9.0.11",
     "lint-staged": "15.2.7",
     "postcss": "^8",
+    "pre-commit": "^1.0.10",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "5"
   }
 }

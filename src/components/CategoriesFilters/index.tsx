@@ -2,8 +2,8 @@
 
 import React, { ReactElement, useContext, useEffect, useState } from "react";
 import { CategoryData } from "@/actions/getCategories";
-import { LoadingPostsStateContext } from "@/providers/LoadingPostsStateProvider";
 import { usePageParams } from "@/hooks/usePageParams";
+import { LoadingPostsStateContext } from "@/providers/LoadingPostsStateProvider";
 import styles from "./categoriesFilters.module.css";
 
 type CategoriesFiltersProps = {

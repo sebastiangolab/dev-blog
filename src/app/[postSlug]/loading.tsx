@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
 import SinglePostPlaceholder from "@/components/SinglePostPlaceholder";
+import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
 
 const LoadingSinglePost = (): ReactElement => (
   <TwoColumnsLayout secondColumnContent={null}>

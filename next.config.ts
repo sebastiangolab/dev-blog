@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "backend.sebastiangolab.pl",
+        hostname: "wp-dev-blog-api.sebastiangolab.pl",
         port: "",
       },
     ],

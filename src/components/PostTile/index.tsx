@@ -1,14 +1,15 @@
 import { ReactElement } from "react";
 import Link from "next/link";
+import { decode } from "html-entities";
 import Markdown from "markdown-to-jsx";
+import normalizePostDate from "@/helpers/normalizePostDate";
 import calendarIcon from "@/icons/calendar-grey.svg";
 import userIcon from "@/icons/user-grey.svg";
-import normalizePostDate from "@/helpers/normalizePostDate";
 import { PostData } from "@/types/postsActionsTypes";
-import PostDetailWithIcon from "../PostDetailWithIcon";
 import CategoryElement from "../CategoryElement";
-import styles from "./postTile.module.css";
 import FeaturedImage from "../FeaturedImage";
+import PostDetailWithIcon from "../PostDetailWithIcon";
+import styles from "./postTile.module.css";
 
 type PostTileProps = Omit<PostData, "id" | "content">;
 
@@ -33,7 +34,7 @@ const PostTile = ({
         <h1 className={styles.title}>{title}</h1>
 
         <Markdown className={styles.excerpt} options={{ forceBlock: true }}>
-          {excerpt}
+          {decode(excerpt)}
         </Markdown>
 
         <div className={styles.details}>

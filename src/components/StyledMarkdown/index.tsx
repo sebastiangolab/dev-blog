@@ -1,8 +1,9 @@
 import { ReactElement } from "react";
+import { decode } from "html-entities";
 import Markdown from "markdown-to-jsx";
+import MarkdownCode from "../MarkdownCode";
 import MarkdownContent, { MarkdownContentType } from "../MarkdownContent";
 import MarkdownTitle, { MarkdownTitleType } from "../MarkdownTitle";
-import MarkdownCode from "../MarkdownCode";
 
 type StyledMarkdownProps = {
   children: string;
@@ -57,8 +58,16 @@ const StyledMarkdown = ({
   children,
 }: StyledMarkdownProps): ReactElement<StyledMarkdownProps> => {
   return (
-    <Markdown options={{ forceBlock: true, overrides: markdownOverrides }}>
-      {children}
+    <Markdown
+      options={{
+        namedCodesToUnicode: {
+          "&#8217;": "dupa",
+        },
+        forceBlock: true,
+        overrides: markdownOverrides,
+      }}
+    >
+      {decode(children)}
     </Markdown>
   );
 };

@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
 import PostsTilesPlaceholders from "@/components/PostsTilesPlaceholders";
+import TwoColumnsLayout from "@/components/TwoColumnsLayout/TwoColumnsLayout";
 
 const LoadingHomePage = (): ReactElement => (
   <TwoColumnsLayout secondColumnContent={null}>

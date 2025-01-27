@@ -11,8 +11,8 @@ import { useDebounce } from "use-debounce";
 import getPosts from "@/actions/getPosts";
 import searchIcon from "@/icons/search-grey.svg";
 import { PostData } from "@/types/postsActionsTypes";
-import SearchedPostsList from "../SearchedPostsList";
 import Overlay from "../Overlay";
+import SearchedPostsList from "../SearchedPostsList";
 import styles from "./searchElement.module.css";
 
 const SearchElement = (): ReactElement => {
