@@ -34,7 +34,7 @@ const SearchedPostsList = ({
 
           {featuredImage ? (
             <FeaturedImage
-              link={featuredImage.link}
+              link={featuredImage.mediaItemUrl}
               alt={featuredImage.altText}
               width={90}
               height={60}

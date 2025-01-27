@@ -31,7 +31,7 @@ export async function generateMetadata({
 
   const strippedExcerpt = postData.excerpt.replace(/(<([^>]+)>)/gi, "");
 
-  const featuredImageLink = postData?.featuredImage?.link;
+  const featuredImageLink = postData?.featuredImage?.mediaItemUrl;
 
   return {
     title: `${postData.title} | ImDevBlog`,

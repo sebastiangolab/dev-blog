@@ -50,7 +50,7 @@ const PostTile = ({
 
       {featuredImage ? (
         <FeaturedImage
-          link={featuredImage.link}
+          link={featuredImage.mediaItemUrl}
           alt={featuredImage.altText}
           width={250}
           height={166}

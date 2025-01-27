@@ -45,7 +45,7 @@ const getSinglePost = async (slug: string): Promise<PostData | null> => {
         featuredImage {
           node {
             altText
-            link
+            mediaItemUrl
             mediaDetails {
               height
               width

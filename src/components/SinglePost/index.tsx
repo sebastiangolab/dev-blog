@@ -43,7 +43,7 @@ const SinglePost = ({
 
       {featuredImage ? (
         <FeaturedImage
-          link={featuredImage.link}
+          link={featuredImage.mediaItemUrl}
           alt={featuredImage.altText}
           width={featuredImage.width}
           height={featuredImage.height}

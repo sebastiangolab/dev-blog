@@ -9,7 +9,7 @@ export type PostData = {
   author: string;
   category: string | null;
   featuredImage: {
-    link: string;
+    mediaItemUrl: string;
     altText: string;
     height: number;
     width: number;
@@ -34,7 +34,7 @@ export type CategoriesResponseData = {
 export type FeaturedImageResponseData = {
   node: {
     altText: string;
-    link: string;
+    mediaItemUrl: string;
     mediaDetails: {
       height: number;
       width: number;

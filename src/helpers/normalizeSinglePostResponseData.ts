@@ -18,14 +18,14 @@ const normalizeSinglePostResponseData = (
 
   const flatCategoryValue = categories?.edges[0]?.node?.name ?? null;
 
-  const flatFeaturedImageLink = featuredImage?.node?.link;
+  const flatFeaturedImageLink = featuredImage?.node?.mediaItemUrl;
   const flatFeaturedImageAltText = featuredImage?.node?.altText;
   const flatFeaturedImageWidth = featuredImage?.node?.mediaDetails.width;
   const flatFeaturedImageHeight = featuredImage?.node?.mediaDetails.height;
 
   const flatFeaturedImage = flatFeaturedImageLink
     ? {
-        link: flatFeaturedImageLink,
+        mediaItemUrl: flatFeaturedImageLink,
         altText: flatFeaturedImageAltText ?? "",
         width: flatFeaturedImageWidth ?? 0,
         height: flatFeaturedImageHeight ?? 0,

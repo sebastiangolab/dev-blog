@@ -60,7 +60,7 @@ const getPosts = async (
               featuredImage {
                 node {
                   altText
-                  link
+                  mediaItemUrl
                   mediaDetails {
                     height
                     width
