@@ -29,7 +29,7 @@
   }
 }
 
-@media (max-width: theme(screens.xSmall)) {
+@media (max-width: theme(screens.xsmall)) {
   .wrapper {
     font-size: 12px;
   }

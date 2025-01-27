@@ -65,7 +65,7 @@
   }
 }
 
-@media (max-width: theme(screens.xSmall)) {
+@media (max-width: theme(screens.xsmall)) {
   .input {
     @apply pl-7 pr-2;
     font-size: 0.75rem;

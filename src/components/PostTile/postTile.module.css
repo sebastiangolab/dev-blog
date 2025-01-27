@@ -75,7 +75,7 @@
   }
 }
 
-@media (max-width: theme(screens.xSmall)) {
+@media (max-width: theme(screens.xsmall)) {
   .wrapper {
     @apply pb-7 mb-7;
   }

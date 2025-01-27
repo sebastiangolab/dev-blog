@@ -42,7 +42,7 @@
   }
 }
 
-@media (max-width: theme(screens.xSmall)) {
+@media (max-width: theme(screens.xsmall)) {
   .featuredImage {
     max-height: 350px;
   }

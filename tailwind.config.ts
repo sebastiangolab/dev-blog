@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xSmall: "576",
+        xsmall: "576px",
         small: "767px",
         medium: "991px",
         large: "1199px",
