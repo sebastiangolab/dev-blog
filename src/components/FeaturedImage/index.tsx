@@ -25,6 +25,7 @@ const FeaturedImage = ({
         width={width}
         height={height}
         className={styles.image}
+        unoptimized={true}
       />
     </div>
   );
