@@ -60,9 +60,6 @@ const StyledMarkdown = ({
   return (
     <Markdown
       options={{
-        namedCodesToUnicode: {
-          "&#8217;": "dupa",
-        },
         forceBlock: true,
         overrides: markdownOverrides,
       }}

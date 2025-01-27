@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ReactElement, useEffect, useState } from "react";
+import { decode } from "html-entities";
 import { Link } from "react-scroll";
 import normalizeMarkdownH2Title from "@/helpers/normalizeMarkdownH2Title";
 import styles from "./contentsList.module.css";
@@ -15,8 +16,8 @@ const ContentsList = ({
   const [activeTitleId, setActiveTitleId] = useState<string | null>();
 
   const h2TitlesData = contentH2Titles.map((h2Title) => ({
-    text: h2Title,
-    id: normalizeMarkdownH2Title(h2Title),
+    text: decode(h2Title),
+    id: normalizeMarkdownH2Title(decode(h2Title)),
   }));
 
   useEffect(() => {
