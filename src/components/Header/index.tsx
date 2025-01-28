@@ -12,7 +12,12 @@ const Header = (): ReactElement => {
 
       <SearchElement />
 
-      <Link href="/" title="contact" className={styles.menuLink}>
+      <Link
+        href="https://sebastiangolab.pl/contact"
+        title="contact"
+        className={styles.menuLink}
+        target="_blank"
+      >
         Contact
       </Link>
     </div>
